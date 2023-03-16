@@ -17,10 +17,11 @@ hr.solid {
   }
 
   .buttons button {
-    background-color: #cbd1d0; /* Green background */
-    border: 3px solid rgb(0, 0, 0); /* Green border */
-    color: rgb(0, 0, 0); /* White text */
-    padding: 10px 24px; /* Some padding */
+    background-color: #cbd1d0;
+    border: 3px solid rgb(0, 0, 0); 
+    margin: 5px; /*Spaces Buttons Apart */
+    color: rgb(0, 0, 0); /* Black text */
+    padding: 10px 24px;
     cursor: pointer; /* Pointer/hand icon */
     width: 10%; /* Set a width if needed */
     display: block; /* Make the buttons appear below each other */
