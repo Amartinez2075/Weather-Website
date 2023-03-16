@@ -2,8 +2,11 @@ fetch('https://api.openweathermap.org/data/2.5/weather?lat=33.7488&lon=84.3877&a
   method: 'GET', //GET is the default.
   credentials: 'same-origin', // include, *same-origin, omit
   redirect: 'follow', // manual, *follow, error
-})
-
-/* Well I need an api link to get me the city name Temp, wind, humidity, and forecast */
+}).then(function (res) {
+    return res.json()
+  }).then(function (data) {
+    console.log(data, "data")
+  })
+/* API finds, City Name, Lat and Lon, weather, wind
 
 /*1*/
