@@ -64,3 +64,25 @@ fetchLocationData(city, state, limit);
 //A request to the 1st function to lat and lon
 //Once thats finished, do a request with the lat and long to the weather api aka Open Weather 
 //Now after that you want to render the data onscreen
+function fetchBulkFiles (zipFile, APIKey) {
+  fetch(`https://bulk.openweathermap.org/archive/${zipFile}?appid=${APIKey}`, {
+    method: 'GET',
+    credentials: 'same-origin',
+    redirect: 'follow'
+  })
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    console.log(data, "data");
+    // Get latitude and longitude from response data
+    const { lat, lon } = data.city.coord;
+    // Call function to fetch weather data using latitude and longitude
+    fetchWeatherData(lat, lon);
+  });
+}
+
+// Get input from user (City/State) (COMPLETE)
+//A request to the 1st function to lat and lon (COMPLETE)
+//Once thats finished, do a request with the lat and long to the weather api aka Open Weather (COMPLETE?)
+//Now after that you want to render the data onscreen (Working)
