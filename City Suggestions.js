@@ -1,3 +1,83 @@
-let city suggestions = [
-    
+let City/State suggestions = [
+    {
+        state:Alabama;
+        cities:Alexander City
+        Andalusia
+        Anniston
+        Athens
+        Atmore
+        Auburn
+        Bessemer
+        Birmingham
+        Chickasaw
+        Clanton
+        Cullman
+        Decatur
+        Demopolis
+        Dothan
+        Enterprise
+        Eufaula
+        Florence
+        Fort Payne
+        Gadsden
+        Greenville
+        Guntersville
+        Huntsville
+        Jasper
+        Marion
+        Mobile
+        Montgomery
+        Opelika
+        Ozark
+        Phenix City
+        Prichard
+        Scottsboro
+        Selma
+        Sheffield
+        Sylacauga
+        Talladega
+        Troy
+        Tuscaloosa
+        Tuscumbia
+        Tuskegee
+    }
+Alexander City
+Andalusia
+Anniston
+Athens
+Atmore
+Auburn
+Bessemer
+Birmingham
+Chickasaw
+Clanton
+Cullman
+Decatur
+Demopolis
+Dothan
+Enterprise
+Eufaula
+Florence
+Fort Payne
+Gadsden
+Greenville
+Guntersville
+Huntsville
+Jasper
+Marion
+Mobile
+Montgomery
+Opelika
+Ozark
+Phenix City
+Prichard
+Scottsboro
+Selma
+Sheffield
+Sylacauga
+Talladega
+Troy
+Tuscaloosa
+Tuscumbia
+Tuskegee
 ]
