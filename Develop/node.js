@@ -7,17 +7,9 @@ var limit = "";
 var APIKey = "6d226fd5f41a35166d199f21ed2431ef";
 var Weather = "";
 
-// Get input from user (City/State)
-//A request to the 1st function to lat and lon
-//Once thats finished, do a request with the lat and long to the weather api aka Open Weather 
-//Now after that you want to render the data onscreen
-
-// Function to fetch weather data using latitude and longitude
-
-
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
-  fetch(`api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`, {
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
@@ -33,8 +25,8 @@ function fetchWeatherData(lat, lon) {
 }
 
 // Function to fetch location data using city and state name
-function fetchLocationData(city, state, limit) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}`, {
+function fetchLocationData(city, state, country) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${APIKey}`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
@@ -45,7 +37,7 @@ function fetchLocationData(city, state, limit) {
   .then(function (data) {
     console.log(data, "data");
     // Get latitude and longitude from response data
-    const { lat, lon } = data[0];
+    const { lat, lon } = data.coord;
     // Call function to fetch weather data using latitude and longitude
     fetchWeatherData(lat, lon);
   });
@@ -56,15 +48,11 @@ function renderWeatherData(data) {
   // Code to render weather data on screen
 }
 
-// Get input from user (City/State)
-// Call function to fetch location data using city and state name
-fetchLocationData(city, state, limit);
+// Call function to fetch location data using city, state, and country name
+fetchLocationData(city, state, country);
 
-// Get input from user (City/State)
-//A request to the 1st function to lat and lon
-//Once thats finished, do a request with the lat and long to the weather api aka Open Weather 
-//Now after that you want to render the data onscreen
-function fetchBulkFiles (zipFile, APIKey) {
+// Function to fetch weather data for bulk files using a zip file
+function fetchBulkFiles(zipFile, APIKey) {
   fetch(`https://bulk.openweathermap.org/archive/${zipFile}?appid=${APIKey}`, {
     method: 'GET',
     credentials: 'same-origin',
@@ -81,6 +69,7 @@ function fetchBulkFiles (zipFile, APIKey) {
     fetchWeatherData(lat, lon);
   });
 }
+
 
 // Get input from user (City/State) (COMPLETE)
 //A request to the 1st function to lat and lon (COMPLETE)
