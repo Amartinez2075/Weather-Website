@@ -2,7 +2,7 @@ var lon = "";
 var lat = "";
 var city = "";
 var state = "";
-var county = "";
+var country = "";
 var limit = "";
 var APIKey = "6d226fd5f41a35166d199f21ed2431ef";
 var Weather = "";
@@ -17,7 +17,7 @@ var Weather = "";
 
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`, {
+  fetch(`api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
@@ -34,7 +34,7 @@ function fetchWeatherData(lat, lon) {
 
 // Function to fetch location data using city and state name
 function fetchLocationData(city, state, limit) {
-  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=${limit}&appid=${APIKey}`, {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
