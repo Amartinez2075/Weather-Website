@@ -7,6 +7,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?lat=33.7488&lon=84.3877&a
   }).then(function (data) {
     console.log(data, "data")
   })
-/* API finds, City Name, Lat and Lon, weather, wind
+// API finds, City Name, Lat and Lon, Weather, Wind
+var city = "Buttons"
 
-/*1*/
