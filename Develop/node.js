@@ -1,5 +1,5 @@
-var lon = "";
-var lat = "";
+var lon = "20.00";
+var lat = "40.00";
 var city = "";
 var state = "";
 var country = "";
@@ -17,18 +17,19 @@ function fetchWeatherData(lat, lon) {
   .then(function (res) {
     return res.json();
   })
-  .then(function (data) {
+  .then(function (data)) {
     console.log(data, "data");
     // Call function to render weather data on screen
-    renderWeatherData(data);
-  });
-}
+  //  renderWeatherData(data);
+}}
+;
+
 
 // Function to fetch location data using city and state name
-function fetchLocationData(city, state, country) {
+// function fetchLocationData(city, state, country) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${APIKey}`, {
     method: 'GET',
-    credentials: 'same-origin',
+   credentials: 'same-origin',
     redirect: 'follow'
   })
   .then(function (res) {
@@ -41,7 +42,6 @@ function fetchLocationData(city, state, country) {
     // Call function to fetch weather data using latitude and longitude
     fetchWeatherData(lat, lon);
   });
-}
 
 // Function to render weather data on screen
 function renderWeatherData(data) {
