@@ -1,5 +1,4 @@
-var lon = "33.7488° N";
-var lat = "84.3877° W";
+
 var city = "";
 var state = "";
 var country = "";
@@ -8,7 +7,7 @@ var APIKey = "6d226fd5f41a35166d199f21ed2431ef";
 
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=6d226fd5f41a35166d199f21ed2431ef`, {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API key}`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
