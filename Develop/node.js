@@ -7,7 +7,7 @@ var city;
 
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`, {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=6d226fd5f41a35166d199f21ed2431ef`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
