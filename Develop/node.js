@@ -45,7 +45,7 @@ function fetchLocationData(city) {
     console.error(err);
   });
 };
-call.fetchLocationData
+
 
 
 const submitBtn = document.getElementById("submit-btn");
