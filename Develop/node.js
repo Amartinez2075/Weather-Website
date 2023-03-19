@@ -56,6 +56,6 @@ submitBtn.addEventListener("click", function(event) {
 });
 
 
-//But what you need to do is create a DOM element so that when you click a submit button, it will run the function to get the name of the city that is typed in.
-//Once you store that city name , you can then call your fetchLocationData function making 
-//sure to pass in that city name and then plug that cityname into your api string to get the data for that city
+//But what you need to do is create a DOM element so that when you click a submit button, it will run the function to get the name of the city that is typed in. (done)
+//Once you store that city name , you can then call your fetchLocationData function making (done)
+//sure to pass in that city name and then plug that cityname into your api string to get the data for that city (done)
