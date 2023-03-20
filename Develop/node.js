@@ -1,13 +1,7 @@
-var country = "";
-var limit = "";
 var APIKey = "6d226fd5f41a35166d199f21ed2431ef";
-var city;
-
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
   console.log (lat,lon,) 
-  
-  //console.log (`https://api.openweathermap.org/data/2.5/weather?lat=`+lat+`lon=`+lon+`&appid=6d226fd5f41a35166d199f21ed2431ef`)
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=`+lat+`&lon=`+lon+`&appid=`+APIKey, {
     method: 'GET',
     credentials: 'same-origin',
@@ -26,9 +20,9 @@ function fetchWeatherData(lat, lon) {
   });
 };
 
-// Function to fetch location data using city name
+// GRABS CITY
 function fetchLocationData(city) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=`+city+`&appid=6d226fd5f41a35166d199f21ed2431ef`, {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=`+city+`&appid=`+APIKey, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
@@ -38,9 +32,10 @@ function fetchLocationData(city) {
   })
   .then(function (data) {
     console.log(data, "data");
+    var cityName = document.getElementById("cityName");
+    cityName.innerText = data.main.temp
     // Get latitude and longitude from response data
     const lon = data.coord.lon;
-
     const lat = data.coord.lat;
     console.log (lat, lon)
     // Call function to fetch weather data using latitude and longitude
@@ -61,6 +56,5 @@ submitBtn.addEventListener("click", function(event) {
 });
 
 
-//But what you need to do is create a DOM element so that when you click a submit button, it will run the function to get the name of the city that is typed in. (done)
-//Once you store that city name , you can then call your fetchLocationData function making (done)
-//sure to pass in that city name and then plug that cityname into your api string to get the data for that city (done)
+//Need to, add a local storage to the data from lat,lon and city.
+//Need to display, City Name, Date, Temp, Wind and Humidity. Temperature should be in Farienheight.
