@@ -30,3 +30,13 @@ hr.solid {
   .buttons button:hover {
     background-color: rgb(78, 161, 85);
   }
+
+  .search-form {
+    align-items: center;
+    background-color: #000000;
+  }
+
+  button {
+    background-color: orange;
+    padding: 10px;
+  }

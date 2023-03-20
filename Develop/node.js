@@ -1,5 +1,3 @@
-var lon = "10.99";
-var lat = "44.34";
 var country = "";
 var limit = "";
 var APIKey = "6d226fd5f41a35166d199f21ed2431ef";
@@ -7,13 +5,17 @@ var city;
 
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=6d226fd5f41a35166d199f21ed2431ef`, {
+  console.log (lat,lon,) 
+  
+  //console.log (`https://api.openweathermap.org/data/2.5/weather?lat=`+lat+`lon=`+lon+`&appid=6d226fd5f41a35166d199f21ed2431ef`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=`+lat+`&lon=`+lon+`&appid=`+APIKey, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
   })
   .then(function (res) {
-    return res.json();
+    //console.log (res.json())
+      return res.json(); 
   })
   .then(function (data) {
     console.log(data, "data");
@@ -26,7 +28,7 @@ function fetchWeatherData(lat, lon) {
 
 // Function to fetch location data using city name
 function fetchLocationData(city) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`, {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=`+city+`&appid=6d226fd5f41a35166d199f21ed2431ef`, {
     method: 'GET',
     credentials: 'same-origin',
     redirect: 'follow'
@@ -37,7 +39,10 @@ function fetchLocationData(city) {
   .then(function (data) {
     console.log(data, "data");
     // Get latitude and longitude from response data
-    const { lat, lon } = data.coord;
+    const lon = data.coord.lon;
+
+    const lat = data.coord.lat;
+    console.log (lat, lon)
     // Call function to fetch weather data using latitude and longitude
     fetchWeatherData(lat, lon);
   })
@@ -48,7 +53,7 @@ function fetchLocationData(city) {
 
 
 
-const submitBtn = document.getElementById("submit-btn");
+const submitBtn = document.getElementById("Submit");
 submitBtn.addEventListener("click", function(event) {
   event.preventDefault(); // prevent default form submission behavior
   const cityName = document.getElementById("city-input").value;
