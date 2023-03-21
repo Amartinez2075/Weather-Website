@@ -1,4 +1,7 @@
 var APIKey = "6d226fd5f41a35166d199f21ed2431ef";
+var weather 
+var wind 
+var humidity 
 // Function to fetch weather data using latitude and longitude
 function fetchWeatherData(lat, lon) {
   console.log (lat,lon,) 
@@ -34,6 +37,31 @@ function fetchLocationData(city) {
     console.log(data, "data");
     var cityName = document.getElementById("cityName");
     cityName.innerText = data.main.temp
+    // Get latitude and longitude from response data
+    const lon = data.coord.lon;
+    const lat = data.coord.lat;
+    console.log (lat, lon)
+    // Call function to fetch weather data using latitude and longitude
+    fetchWeatherData(lat, lon);
+  })
+  .catch(function (err) {
+    console.error(err);
+  });
+};
+
+function fetchLocationData(wind) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=`+wind+`&appid=`+APIKey, {
+    method: 'GET',
+    credentials: 'same-origin',
+    redirect: 'follow'
+  })
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    console.log(data, "data");
+    var wind = document.getElementById("cityName");
+    wind.innerText = data.wind.speed
     // Get latitude and longitude from response data
     const lon = data.coord.lon;
     const lat = data.coord.lat;
