@@ -1,0 +1,70 @@
+/* Styles for the main heading */
+h1 {
+	background-color: rgb(184, 3, 255); /* Set background color to a shade of purple */
+	text-align: center; /* Center the text within the element */
+}
+
+/* Styles for labels */
+label {
+	margin-top: 10px; /* Add top margin of 10 pixels */
+	font-weight: bold; /* Apply bold font weight */
+	font-size: 20px; /* Set font size to 20 pixels */
+}
+
+/* Styles for cards */
+.card {
+	margin: 10px; /* Add a margin of 10 pixels around the card element */
+}
+
+/* Styles for the first column */
+.colOne {
+	background-color: rgb(255, 255, 255); /* Set background color to white */
+	/* darkkhaki (This comment seems to be incorrect as the color code is not darkkhaki) */
+}
+
+/* Styles for the second column */
+.colTwo {
+  background-color: rgb(184, 3, 255) /* Set background color to white */
+}
+
+/* Styles for the history button row */
+.histBtnRow {
+	margin-top: 5px; /* Add top margin of 5 pixels */
+	margin-bottom: 5px; /* Add bottom margin of 5 pixels */
+}
+
+/* Styles for the green class */
+.green{
+  background-color: lightgreen; /* Set background color to light green */
+}
+
+/* Styles for the yellow class */
+.yellow{
+  background-color: yellow; /* Set background color to yellow */
+}
+
+/* Styles for the orange class */
+.orange{
+  background-color: orange; /* Set background color to orange */
+}
+
+/* Styles for the red class */
+.red{
+  background-color: red; /* Set background color to red */
+}
+
+/* Styles for the purple class */
+.purple{
+  background-color: purple; /* Set background color to purple */
+}
+
+/* Styles for icons */
+.icons {
+	height: 70px; /* Set height of the icon element to 70 pixels */
+	width: 70px; /* Set width of the icon element to 70 pixels */
+}
+
+/* Styles for the card today's date */
+.cardTodayDate {
+	font-size: 20px; /* Set font size to 20 pixels */
+}
